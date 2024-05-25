@@ -1,0 +1,80 @@
+
+
+<header class="bg-gray-500 sticky top-0 z-50 px-4">
+    <div class="container mx-auto flex justify-between items-center py-4">
+      <!-- Left section: Logo -->
+      <div class="flex items-center">
+        <img src="https://spacema-dev.com/blue-star/assets/images/blue-logo.png" alt="Logo" class="h-14 w-auto mr-4">
+      </div>
+      <div class="relative inline-block text-left">
+        <div class="group">
+            <button type="button"
+                class="inline-flex justify-center items-center w-full px-4 py-2 text-sm font-medium text-white bg-gray-800 hover:bg-gray-700 focus:outline-none focus:bg-gray-700">
+                Category
+                <!-- Dropdown arrow -->
+                <svg class="w-4 h-4 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 12l-5-5h10l-5 5z" />
+                </svg>
+            </button>
+    
+            <!-- Dropdown menu -->
+            <div
+                class="absolute left-0 w-40 mt-1 origin-top-left bg-white divide-y divide-gray-100 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+                <div class="py-1">
+                    {% for category in categories %}
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{{ category.title }}</a>
+                    <hr>
+                    {% endfor %}
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+      <!-- Hamburger menu (for mobile) -->
+      <div class="flex md:hidden">
+        <button id="hamburger" class="text-white focus:outline-none">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Center section: Menu -->
+      <nav class="hidden md:flex md:flex-grow justify-center">
+        <ul class="flex justify-center space-x-4 text-white">
+          <li><a href="#home" class="hover:text-secondary font-bold">Главная</a></li>
+          <li><a href="{% url 'aboutschool' %}" class="hover:text-secondary font-bold">О школе</a></li>
+          <li><a href="#results" class="hover:text-secondary font-bold">Дополнительное образование</a></li>
+          <li><a href="#reviews" class="hover:text-secondary font-bold">Новости</a></li>
+          <li><a href="#portfolio" class="hover:text-secondary font-bold">Контакты</a></li>
+          <!-- <li><a href="#team" class="hover:text-secondary font-bold">Team</a></li>
+          <li><a href="#contact" class="hover:text-secondary font-bold">Contact</a></li>
+        </ul> -->
+      </nav>
+
+      <!-- Right section: Buttons (for desktop) -->
+      <div class="hidden lg:flex items-center space-x-4">
+        <a href="#" class="bg-green-500 hover:bg-blue-500 text-white font-semibold px-4 py-2 rounded inline-block">Напишите нам</a>
+        <a href="#" class="bg-blue-500 hover:bg-green-500 text-white font-semibold px-4 py-2 rounded inline-block">Позвоните нам</a>
+      </div>
+    </div>
+  </header>
+
+ <!-- Mobile menu -->
+<nav id="mobile-menu-placeholder" class="mobile-menu hidden flex-col items-center space-y-8 md:hidden px-8">
+  <ul class="w-full text-center">
+    <li class="border-b border-gray-300 pb-4 pt-4"><a href="#home" class="hover:text-secondary font-bold">Главная</a></li>
+    <li class="border-b border-gray-300 pb-4 pt-4"><a href="{% url 'aboutschool' %}" class="hover:text-secondary font-bold">О школе</a></li>
+    <li class="border-b border-gray-300 pb-4 pt-4"><a href="#results" class="hover:text-secondary font-bold">Дополнительное образование</a></li>
+    <li class="border-b border-gray-300 pb-4 pt-4"><a href="#reviews" class="hover:text-secondary font-bold">Новости</a></li>
+    <li class="border-b border-gray-300 pb-4 pt-4"><a href="#portfolio" class="hover:text-secondary font-bold">Контакты</a></li>
+    <!-- <li class="border-b border-gray-300 pb-4 pt-4"><a href="#team" class="hover:text-secondary font-bold">Team</a></li>
+    <li class="pb-4 pt-4"><a href="#contact" class="hover:text-secondary font-bold">Contact</a></li> -->
+  </ul>
+  <div class="flex flex-col mt-6 space-y-2 items-center">
+    <a href="#" class="bg-green-500 hover:bg-blue-500 text-white font-semibold px-4 py-2 rounded inline-block flex items-center justify-center min-w-[110px]">Напишите нам</a>
+    <a href="#" class="bg-blue-500 hover:bg-green-500 text-white font-semibold px-4 py-2 rounded inline-block flex items-center justify-center min-w-[110px]">Позвоните нам</a>
+  </div>
+</nav>

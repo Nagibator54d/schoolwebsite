@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<div style="margin-top: 20px; margin-bottom: 20px; display: flex; gap: 20px;
+flex-wrap: wrap; justify-content: center;" >
+    {% for category in categories %}
+        <a ><img  style="width: 300px; height: 300px; margin-left: 50px; border-radius: 10px 10px 10px 10px;" src="{{ category.image.url }} " alt="" srcset="">
+        </a>
+        
+    {% endfor %}
+
+{% endblock %}
+    

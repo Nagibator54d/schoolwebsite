@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>School Template</title>
+  
+</head>
+<body>
+    {% block content %}
+   
+    <h1>Courses</h1>
+    <ul>
+        {% for school in schools %}
+            <li>
+                <h2>{{ school.title }}</h2>
+                <p>{{ school.description }}</p>
+                <img src="{{ school.image.url }}" alt="{{ school.title }}">
+            </li>
+        {% endfor %}
+    </ul>
+    <h1>News</h1>
+    <ul>
+        {% for article in articles %}
+            <li>
+                <h2>{{ article.title }}</h2>
+                <p>{{ article.description }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endblock %}
+    
+</body>
+</html>
+
